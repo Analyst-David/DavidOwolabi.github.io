@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HR Dashboard – Stakeholder Summary</title>
+
+  <style>
+    :root{
+      --bg:#f7f7fb;
+      --card:#ffffff;
+      --ink:#23262d;
+      --muted:#61656f;
+      --accent:#2f6fed;
+      --border:#e6e8ef;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font:16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--ink); background:var(--bg);
+    }
+    header{
+      background:var(--card); border-bottom:1px solid var(--border);
+      padding:28px 20px; text-align:center;
+    }
+    header h1{margin:0 0 6px 0; font-size:28px; letter-spacing:.5px}
+    header p{margin:0; color:var(--muted)}
+    main{max-width:900px; margin:28px auto; padding:0 16px}
+    section{
+      background:var(--card); border:1px solid var(--border);
+      border-radius:14px; padding:22px; margin-bottom:18px;
+      box-shadow:0 2px 6px rgba(23,26,31,.04);
+    }
+    h2{margin:0 0 12px 0; font-size:20px}
+    h3{margin:18px 0 8px; font-size:17px}
+    p{margin:10px 0}
+    ul{margin:8px 0 0 22px}
+    li{margin:6px 0}
+    .kpis{
+      display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      margin-top:8px
+    }
+    .kpi{
+      border:1px solid var(--border); border-radius:12px; padding:14px; text-align:center;
+    }
+    .kpi span{display:block; color:var(--muted); font-size:13px}
+    .kpi strong{display:block; font-size:24px; margin-top:4px; color:var(--accent)}
+    figure{margin:0 0 14px 0}
+    figure img{width:100%; height:auto; border:1px solid var(--border); border-radius:12px}
+    figcaption{color:var(--muted); font-size:13px; margin-top:6px}
+    footer{color:var(--muted); text-align:center; padding:24px 10px 36px}
+    @media print{
+      body{background:#fff}
+      section{box-shadow:none}
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>HR Dashboard – Stakeholder Summary</h1>
+    <p>Overview of workforce size, attrition, demographics, education fields, and job satisfaction.</p>
+  </header>
+
+  <main>
+    <!-- Optional: include your dashboard image -->
+    <section aria-labelledby="dash-image">
+      <figure>
+        <!-- Replace the src with your actual image path or URL -->
+        <img src="images/hr_dashboard.png" alt="HR Dashboard overview showing KPIs, attrition by department, age & gender breakdown, and job satisfaction by role." />
+        <figcaption id="dash-image">Figure: HR Dashboard as referenced in the summary.</figcaption>
+      </figure>
+    </section>
+
+    <section aria-labelledby="overview">
+      <h2 id="overview">Workforce Overview</h2>
+      <div class="kpis" role="list">
+        <div class="kpi" role="listitem"><span>Total Employees</span><strong>1,470</strong></div>
+        <div class="kpi" role="listitem"><span>Attrition Count</span><strong>237</strong></div>
+        <div class="kpi" role="listitem"><span>Attrition Rate</span><strong>16%</strong></div>
+        <div class="kpi" role="listitem"><span>Average Age</span><strong>37</strong></div>
+      </div>
+      <p>This dashboard summarizes employee demographics, attrition trends, and job satisfaction across departments, education fields, and age bands.</p>
+    </section>
+
+    <section aria-labelledby="trends">
+      <h2 id="trends">Attrition Trends</h2>
+      <ul>
+        <li><strong>By Department:</strong> Highest attrition in <em>R&amp;D (133)</em> and <em>Sales (92)</em>; HR is comparatively low (<em>12</em>).</li>
+        <li><strong>By Education Field:</strong> Turnover is highest in <em>Life Sciences (89)</em> and <em>Medical (63)</em>.</li>
+        <li><strong>By Age Group &amp; Gender:</strong> Attrition concentrates among <em>25–34</em> (especially males), followed by <em>35–44</em>.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="demographics">
+      <h2 id="demographics">Employee Demographics</h2>
+      <p>Male headcount is higher across most age groups. The youngest (<em>under 25</em>) and oldest (<em>over 55</em>) cohorts contribute less to attrition than mid-career employees.</p>
+    </section>
+
+    <section aria-labelledby="satisfaction">
+      <h2 id="satisfaction">Job Satisfaction</h2>
+      <p>Job satisfaction varies by role. <em>Sales Executives</em> and <em>Research Scientists</em> show relatively stronger satisfaction levels, while <em>Human Resources</em> and some director roles trend lower—areas for closer review.</p>
+    </section>
+
+    <section aria-labelledby="actions">
+      <h2 id="actions">Strategic Insights &amp; Actions</h2>
+      <ul>
+        <li><strong>Retain Mid-Career Talent:</strong> Target the 25–34 cohort with growth paths, mentorship, and work-life initiatives.</li>
+        <li><strong>Department Focus:</strong> Investigate root causes in <em>R&amp;D</em> and <em>Sales</em> (leadership, workload, compensation, role clarity).</li>
+        <li><strong>Education-Specific Plans:</strong> Tailor development and progression frameworks for <em>Life Sciences</em> and <em>Medical</em> backgrounds.</li>
+        <li><strong>Elevate Satisfaction:</strong> Address pain points in HR and director-track roles to reduce risk of further turnover.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    © <!-- year --> <span id="year"></span> HR Analytics. All rights reserved.
+  </footer>
+
+  <script>
+    // sets the year in the footer automatically
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
